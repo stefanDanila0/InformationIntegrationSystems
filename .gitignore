@@ -1,0 +1,7 @@
+# ignore datasets
+*.csv
+
+# ignore potentially generated temp files from execution or Windows
+_tmp_*.sql
+.DS_Store
+Thumbs.db
