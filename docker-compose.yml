@@ -62,6 +62,18 @@ services:
     networks:
       - fdb-network
 
+  fdb-api:
+    build: ./fdb-api
+    container_name: fdb-api
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:oracle:thin:@oracle-db:1521/XEPDB1
+    ports:
+      - "8080:8080"
+    depends_on:
+      - oracle-db
+    networks:
+      - fdb-network
+
 networks:
   fdb-network:
     driver: bridge
