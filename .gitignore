@@ -5,3 +5,4 @@
 _tmp_*.sql
 .DS_Store
 Thumbs.db
+*.resolved

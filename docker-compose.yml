@@ -56,9 +56,20 @@ services:
       - MONGO_URI=mongodb://mongo-db:27017
       - 'RHO=/mclient/connection-string->"mongodb://mongo-db:27017";/mongo/mongo-mounts[1]->{"what":"*","where":"/"};/http-listener/host->"0.0.0.0"'
     ports:
-      - "8081:8080"
+      - "8082:8080"
     depends_on:
       - mongo-db
+    networks:
+      - fdb-network
+
+  mongo-seed:
+    image: mongo:6
+    container_name: mongo-seed
+    depends_on:
+      - mongo-db
+    volumes:
+      - ./mongo-seed:/seed
+    entrypoint: ["mongosh", "--host", "mongo-db", "--file", "/seed/seed_product_categories.js"]
     networks:
       - fdb-network
 
