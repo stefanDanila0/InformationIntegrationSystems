@@ -15,7 +15,8 @@ import static org.bson.codecs.configuration.CodecRegistries.fromRegistries;
 
 @Service
 public class MongoDataSourceConnector {
-    @Value("${mongodb.data.source.DB_URL}")
+
+	@Value("${mongodb.data.source.DB_URL}")
 	private String mongodbUri;
 
     @Value("${mongodb.data.source.database}")
@@ -27,29 +28,6 @@ public class MongoDataSourceConnector {
         //
         MongoClient mongoClient = MongoClients.create(mongodbUri);
         MongoDatabase db = mongoClient.getDatabase(mongodbName).withCodecRegistry(pojoCodecRegistry);
-        //
-        return db;
-    }
-}
-
-/*
-* https://www.mongodb.com/docs/drivers/java/sync/v5.2/data-formats/document-data-format-pojo/
- */
-
-    /*
-	public MongoDatabase getMongoDatabase() {
-		ConnectionString connectionString = new ConnectionString(mongodbUri);
-        CodecRegistry pojoCodecRegistry = fromProviders(PojoCodecProvider.builder().automatic(true).build());
-        CodecRegistry codecRegistry = fromRegistries(MongoClientSettings.getDefaultCodecRegistry(), pojoCodecRegistry);
-        MongoClientSettings clientSettings = MongoClientSettings.builder()
-                                                                .applyConnectionString(connectionString)
-                                                                .codecRegistry(codecRegistry)
-                                                                .build();
-        //
-        MongoClient mongoClient = MongoClients.create(clientSettings);
-        MongoDatabase db = mongoClient.getDatabase(mongodbName);
-        //
-        return db;
+		return db;
 	}
-
-     */
+}

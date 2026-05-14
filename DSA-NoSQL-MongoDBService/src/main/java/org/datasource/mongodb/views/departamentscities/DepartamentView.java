@@ -17,6 +17,17 @@ public class DepartamentView implements Serializable{
 	private String countryName;
 
 	private List<CityView> cities;
+
+	public Long getIdDepartament() { return idDepartament; }
+	public void setIdDepartament(Long idDepartament) { this.idDepartament = idDepartament; }
+	public String getDepartamentName() { return departamentName; }
+	public void setDepartamentName(String departamentName) { this.departamentName = departamentName; }
+	public String getDepartamentCode() { return departamentCode; }
+	public void setDepartamentCode(String departamentCode) { this.departamentCode = departamentCode; }
+	public String getCountryName() { return countryName; }
+	public void setCountryName(String countryName) { this.countryName = countryName; }
+	public List<CityView> getCities() { return cities; }
+	public void setCities(List<CityView> cities) { this.cities = cities; }
 }
 
 

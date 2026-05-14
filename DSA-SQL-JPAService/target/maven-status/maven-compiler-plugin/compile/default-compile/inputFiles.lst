@@ -1,0 +1,17 @@
+Z:\InformationIntegrationSystems\DSA-SQL-JPAService\src\main\java\org\datasource\jpa\JPADataSourceConnector.java
+Z:\InformationIntegrationSystems\DSA-SQL-JPAService\src\main\java\org\datasource\jpa\views\product\ProductView.java
+Z:\InformationIntegrationSystems\DSA-SQL-JPAService\src\main\java\org\datasource\jpa\views\product\ProductViewBuilder.java
+Z:\InformationIntegrationSystems\DSA-SQL-JPAService\src\main\java\org\datasource\jpa\views\sales\SalesView.java
+Z:\InformationIntegrationSystems\DSA-SQL-JPAService\src\main\java\org\datasource\jpa\views\sales\SalesViewBuilderSQL.java
+Z:\InformationIntegrationSystems\DSA-SQL-JPAService\src\main\java\org\datasource\RESTCustomerViewService.java
+Z:\InformationIntegrationSystems\DSA-SQL-JPAService\src\main\java\org\datasource\RESTSellerViewService.java
+Z:\InformationIntegrationSystems\DSA-SQL-JPAService\src\main\java\org\datasource\RESTViewServiceJPA.java
+Z:\InformationIntegrationSystems\DSA-SQL-JPAService\src\main\java\org\datasource\security\BasicConfiguration.java
+Z:\InformationIntegrationSystems\DSA-SQL-JPAService\src\main\java\org\datasource\SpringBootSQLJPADataService.java
+Z:\InformationIntegrationSystems\DSA-SQL-JPAService\src\main\java\org\datasource\springdata\views\CustomerView.java
+Z:\InformationIntegrationSystems\DSA-SQL-JPAService\src\main\java\org\datasource\springdata\views\CustomerViewRepository.java
+Z:\InformationIntegrationSystems\DSA-SQL-JPAService\src\main\java\org\datasource\springdata\views\InvoicesSalesView.java
+Z:\InformationIntegrationSystems\DSA-SQL-JPAService\src\main\java\org\datasource\springdata\views\InvoiceView.java
+Z:\InformationIntegrationSystems\DSA-SQL-JPAService\src\main\java\org\datasource\springdata\views\InvoiceViewRepository.java
+Z:\InformationIntegrationSystems\DSA-SQL-JPAService\src\main\java\org\datasource\springdata\views\SellerView.java
+Z:\InformationIntegrationSystems\DSA-SQL-JPAService\src\main\java\org\datasource\springdata\views\SellerViewRepository.java

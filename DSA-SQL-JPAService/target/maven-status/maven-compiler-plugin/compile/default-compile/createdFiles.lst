@@ -1,0 +1,10 @@
+org\datasource\SpringBootSQLJPADataService.class
+org\datasource\jpa\views\sales\SalesViewBuilderSQL.class
+org\datasource\jpa\views\product\ProductViewBuilder.class
+org\datasource\security\BasicConfiguration.class
+org\datasource\jpa\JPADataSourceConnector.class
+org\datasource\springdata\views\InvoiceView.class
+org\datasource\jpa\views\product\ProductView.class
+org\datasource\springdata\views\InvoiceViewRepository.class
+org\datasource\jpa\views\sales\SalesView.class
+org\datasource\springdata\views\InvoicesSalesView.class

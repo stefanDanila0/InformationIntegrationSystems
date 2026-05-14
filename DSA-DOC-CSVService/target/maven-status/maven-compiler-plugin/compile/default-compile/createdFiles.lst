@@ -1,0 +1,5 @@
+org\datasource\csv\CSVResourceFileDataSourceConnector.class
+org\datasource\security\BasicConfiguration.class
+org\datasource\csv\custcategories\CustomerEmpCategoryCSVViewBuilder.class
+org\datasource\csv\custcategories\CustomerCategoryView.class
+org\datasource\SpringBootDOCCSVService.class

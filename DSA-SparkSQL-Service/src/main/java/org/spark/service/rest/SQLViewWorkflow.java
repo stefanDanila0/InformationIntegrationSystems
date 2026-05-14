@@ -7,6 +7,9 @@ import org.spark.service.SparkSQLService;
 import org.spark.service.exception.RESTSQLWorkflowException;
 import org.springframework.stereotype.Service;
 
+import org.apache.spark.sql.Encoders;
+import org.apache.spark.sql.functions;
+import java.util.Collections;
 import java.util.List;
 import java.util.logging.Logger;
 
@@ -37,7 +40,7 @@ public class SQLViewWorkflow {
         String viewList;
         try {
             viewList = QueryRESTDataService.getRESTDataDocument(restDataServiceHttpURL);
-            logger.info("DEBUG: REST Data: " + viewList);
+            // logger.info("DEBUG: REST Data: " + viewList);
         } catch (Exception e) {
             throw new RESTSQLWorkflowException("STEP_1: Call REST Endpoint Error for: ["
                     + restDataServiceHttpURL + "]\n"
@@ -45,19 +48,14 @@ public class SQLViewWorkflow {
         }
         // 2.Get JSON schema from REST Endpoint
         String jsonViewSchema;
-        String jsonSchemaQuery = String.format("""
-                        SELECT schema_of_json('%s') as json_schema
-                    """, viewList);
         try {
-            logger.info("DEBUG: jsonSchemaQuery: " + jsonSchemaQuery);
-            List<Row> jsonViewSchemaDF = spark.sql(jsonSchemaQuery).collectAsList();
-            logger.info("DEBUG: JSON Schema DF: " + jsonViewSchemaDF);
-            jsonViewSchema = jsonViewSchemaDF
-                    .get(0).getAs("json_schema").toString();
+            logger.info("DEBUG: Inferring schema for large JSON document...");
+            Dataset<Row> schemaDF = spark.range(1)
+                    .select(functions.schema_of_json(functions.lit(viewList)).as("json_schema"));
+            jsonViewSchema = schemaDF.first().getString(0);
             logger.info("DEBUG: JSON Schema: " + jsonViewSchema);
         } catch (Exception e) {
-            throw new RESTSQLWorkflowException("STEP_2: Get JSON schema from REST Endpoint Error for: ["
-                    + jsonSchemaQuery + "]\n"
+            throw new RESTSQLWorkflowException("STEP_2: Get JSON schema from REST Endpoint Error: "
                     + e.getMessage());
         }
         //

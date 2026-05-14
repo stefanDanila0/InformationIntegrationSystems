@@ -10,6 +10,14 @@ import java.util.List;
 @Data @AllArgsConstructor @NoArgsConstructor(force = true)
 public class DepartamentsListView {
 	private List<DepartamentView> departaments;
+
+	public List<DepartamentView> getDepartaments() {
+		return departaments;
+	}
+
+	public void setDepartaments(List<DepartamentView> departaments) {
+		this.departaments = departaments;
+	}
 }
 
 /*
